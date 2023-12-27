@@ -1,0 +1,7 @@
+names:
+- Car_Plate
+nc: 1
+path: data\YoloDolboebo
+test: images\test
+train: images\train
+val: images\val
