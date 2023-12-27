@@ -7,6 +7,7 @@
 <a href="#part3">Обучение модели</a><p></p>
 <a href="#part4">Запуск натренированной модели</a><p></p>
 <a href="#part5">Запуск модели YoloV8x</a>
+<a href="#part6">Ссылка на датасет</a>
 
 <h2 id="part1"><b>Что нужно👍</b></h2>
 
@@ -61,3 +62,6 @@
 <p>Так как не у всех есть веб камера на компьютере можно использовать приложение <a href="https://ivcam.softonic.ru/">iVCam</a> на телефон и компьютер. Подключаем их и получаем: </p>
 <img src="https://github.com/XiLiCe/Lab_Ilmir/blob/XiLiCe-patch-1/itog.png?raw=true">
 <img src="https://github.com/XiLiCe/Lab_Ilmir/blob/XiLiCe-patch-1/itog2.png?raw=true">
+
+<h6 id="part6">Ссылка на датасет</h6>
+<p>https://drive.google.com/drive/folders/1cw8_pHgt_QfCEEtuKlI_UNHO9PRXtYg0?usp=sharing</p>
