@@ -51,6 +51,7 @@
 <h4 id="part4">Запуск натренированной модели</h4>
 <p>Для запуска нашей модели мы открывает в GoogleColab файл YoloTraffic.ipynb (подключаемся так же к видеокарте)</p><p></p>
 <p>Запускаем каждый блок кода по очереди. После выполнения мы получим видео car_plate</p>
+<img src="https://github.com/XiLiCe/Lab_Ilmir/blob/XiLiCe-patch-1/carplateitog.png?raw=true">
 
 <h5 id="part5">Запуск модели YoloV8x</h5>
 <p>Нам нужно открыть файл YoloVision.ipynb с помощью Visual Studio Code. Тут нам потребуется после загрузки библиотеки ultralytics, удалить библиотеки torch, torchvision и torchaudio. Мы удаляем их так как версии которые скачиваются вместе с ultralytics не работают с CudaToolkit 12.1</p><p></p>
