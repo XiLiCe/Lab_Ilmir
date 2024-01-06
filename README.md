@@ -12,7 +12,7 @@
 <h2 id="part1"><b>Что нужно👍</b></h2>
 
 <p>Установите <a href="https://www.python.org/ftp/python/3.11.6/python-3.11.6-amd64.exe">Python 3.11.6</a></p>
-<p>Установите <a href="https://git-scm.com/downloads">Git</a>:octocat:</p>
+<!-- <p>Установите <a href="https://git-scm.com/downloads">Git</a>:octocat:</p> -->
 <p>Скачайте и установите <a href="https://developer.nvidia.com/cuda-12-1-0-download-archive">CudaToolkit 12.1</a><img src="https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_cuda_icon_130656.png" style="width: 20px; height: 20px;"></p>
 <p>Скачать и установить <a href="https://code.visualstudio.com/download">Visual Studio Code</a> (нужно для запуска модели через вашу камеру)</p>
 <p><br></p>
