@@ -22,37 +22,51 @@
 <p>Нажимаем на + в правом верхнем углу и создаём новый проект</p>
 <img src="https://raw.githubusercontent.com/XiLiCe/Lab_Ilmir/cd00f8f5e5355e6352a6fe4b827060c9180282f6/+.png">
 <p>Вводим название нашего проекта и добавляем лэйбл во вкладке Constructor (я назвал проекст YoloTest_detect, и добавил лэйбл с название Car_plate), после чего нажимаем Submit&Open</p>
-<img src="https://github.com/XiLiCe/Lab_Ilmir/blob/XiLiCe-patch-1/newproject.png?raw=true">
+<img src="https://github.com/XiLiCe/Lab_Ilmir/blob/XiLiCe-screenshots/1.png?raw=true">
 <p>В открывшейся странице нажимает + и создаём новую задачу</p>
-<img src="https://github.com/XiLiCe/Lab_Ilmir/blob/XiLiCe-patch-1/newtask.png?raw=true">
+<img src="https://github.com/XiLiCe/Lab_Ilmir/blob/XiLiCe-screenshots/2.png?raw=true">
+
 <p>В данном окне вводим название задачи, во вкладе Subset выбираем train и загружаем ранее собранные нами фотографии. Нажимает Submit&Open</p>
-<img src="https://github.com/XiLiCe/Lab_Ilmir/blob/XiLiCe-patch-1/createnewtask.png?raw=true">
+<img src="https://github.com/XiLiCe/Lab_Ilmir/blob/XiLiCe-screenshots/3.png?raw=true">
+
 <p>В новом окне открываем нашу работу и начинаем разметку. После того как мы разметили всё что нам нужно, сохраняем работу и во вкладке Menu нажимаем Finish the job</p>
-<img src="https://github.com/XiLiCe/Lab_Ilmir/blob/XiLiCe-patch-1/razmetka.png?raw=true">
+<img src="https://github.com/XiLiCe/Lab_Ilmir/blob/XiLiCe-screenshots/4.png?raw=true">
+
 <p>Теперь в нашем проекте данная задача будет отмеченна как выполенная</p>
-<img src="https://github.com/XiLiCe/Lab_Ilmir/blob/XiLiCe-patch-1/finishjob.png?raw=true">
+<img src="https://github.com/XiLiCe/Lab_Ilmir/blob/XiLiCe-screenshots/5.png?raw=true">
+
 <p>Далее в разделе нашего проекта открываем Actions -> Export dataset. Здесь выбираем формат YOLO (в данном случае нам придётся в ручную загружать наши фото в папку с разметками, так как что бы скачивать файл с фото нам придётся улучшить аккаунт)</p>
-<img src="https://github.com/XiLiCe/Lab_Ilmir/blob/XiLiCe-patch-1/export.png?raw=true">
+<img src="https://github.com/XiLiCe/Lab_Ilmir/blob/XiLiCe-screenshots/6.png?raw=true">
+
+
 <p>Нажимаем Ok и у нас происходит загрузка, нам нужно разархивировать данный файл, и в папку obj_train_data переместить все наши фотографии. У нас есть датасет, но он ещё не подходит для обучения модели Yolo</p><p></p>
 <p>Для того что-бы конвертировать наш датасет в формат датасета для Yolo нам потребуется скачать репозиторий <a href="https://github.com/ankhafizov/CVAT2YOLO">CVAT2YOLO</a></p>
-<p>Создаём новую папку и открываем в ней терминал. В терминале пишем (git clone https://github.com/ankhafizov/CVAT2YOLO.git). В эту папку у нас скачается репозиторий CVAT2YOLO. В папку CVAT2YOLO переносим наш датасет. После переноса датасета в папке CVAT2YOLO открываем терминал и пишем(python main_cvat2yolo.py --cvat Yolo_Vision --mode autosplit --output_folder out/my_dataset_yolov5 --img_format png), где Yolo_Vision название папки с нашим датасетом, out/my_dataset_yolov5 место сохранения нашего преобразованного датасета</p>
-<img src="https://github.com/XiLiCe/Lab_Ilmir/blob/XiLiCe-patch-1/CVAT2YOLO.png?raw=true">
-<img src="https://github.com/XiLiCe/Lab_Ilmir/blob/XiLiCe-patch-1/python.png?raw=true">
+<p>Создаём новую папку и открываем в ней терминал. В терминале пишем (git clone https://github.com/ankhafizov/CVAT2YOLO.git). В эту папку у нас скачается репозиторий CVAT2YOLO. В папку CVAT2YOLO переносим наш датасет. После переноса датасета в папке CVAT2YOLO открываем терминал и пишем
+
+```
+ python main_cvat2yolo.py --cvat Yolo_Vision --mode autosplit --output_folder out/my_dataset_yolov5 --img_format png
+```
+ 
+ где Yolo_Vision название папки с нашим датасетом, out/my_dataset_yolov5 место сохранения нашего преобразованного датасета</p>
+<img src="https://github.com/XiLiCe/Lab_Ilmir/blob/XiLiCe-screenshots/7.png?raw=true">
+<img src="https://github.com/XiLiCe/Lab_Ilmir/blob/XiLiCe-screenshots/8.png?raw=true">
 <p>Мы получили датасет который можно использовать для обучения нашей модели</p>
 
 <h3 id="part3">Обучение модели</h3>
 
 <p>Для обучения нашей модели желательно использовать Google Colab, и подключится к видеокарте</p><p></p>
 <p>Открываем файл YoloTrain.ipynb и загружаем в сессию наш датасет (файл yolodataset). В файле YoloVisions.yaml в path указываем ссылку на наш датасет. </p>
-<img src="https://github.com/XiLiCe/Lab_Ilmir/blob/XiLiCe-patch-1/yaml.png?raw=true">
+<img src="https://github.com/XiLiCe/Lab_Ilmir/blob/XiLiCe-screenshots/9.png?raw=true">
+
 <p>После всего этого запускаем каждый блок кода по порядку.</p>
-<img src="https://github.com/XiLiCe/Lab_Ilmir/blob/XiLiCe-patch-1/train.png?raw=true">
+<img src="https://github.com/XiLiCe/Lab_Ilmir/blob/XiLiCe-screenshots/10.png?raw=true">
+
 <p>После окончания мы получим обученную модель, она будет называться best.pt</p>
 
 <h4 id="part4">Запуск натренированной модели</h4>
 <p>Для запуска нашей модели мы открывает в GoogleColab файл YoloTraffic.ipynb (подключаемся так же к видеокарте)</p><p></p>
 <p>Запускаем каждый блок кода по очереди. После выполнения мы получим видео car_plate</p>
-<img src="https://github.com/XiLiCe/Lab_Ilmir/blob/XiLiCe-patch-1/carplateitog.png?raw=true">
+<img src="https://github.com/XiLiCe/Lab_Ilmir/blob/XiLiCe-screenshots/11.png?raw=true">
 
 <h5 id="part5">Запуск модели YoloV8x</h5>
 <p>Нам нужно открыть файл YoloVision.ipynb с помощью Visual Studio Code. Тут нам потребуется после загрузки библиотеки ultralytics, удалить библиотеки torch, torchvision и torchaudio. Мы удаляем их так как версии которые скачиваются вместе с ultralytics не работают с CudaToolkit 12.1</p><p></p>
@@ -60,5 +74,5 @@
 <p>Запускаем по очереди блоки кода в файле YoloVision.ipynb</p><p></p>
 
 <p>Так как не у всех есть веб камера на компьютере можно использовать приложение <a href="https://ivcam.softonic.ru/">iVCam</a> на телефон и компьютер. Подключаем их и получаем: </p>
-<img src="https://github.com/XiLiCe/Lab_Ilmir/blob/XiLiCe-patch-1/itog.png?raw=true">
-<img src="https://github.com/XiLiCe/Lab_Ilmir/blob/XiLiCe-patch-1/itog2.png?raw=true">
+<img src="https://github.com/XiLiCe/Lab_Ilmir/blob/XiLiCe-screenshots/12.png?raw=true">
+<img src="https://github.com/XiLiCe/Lab_Ilmir/blob/XiLiCe-screenshots/13.png?raw=true">
